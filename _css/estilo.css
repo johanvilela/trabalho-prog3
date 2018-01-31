@@ -1,0 +1,40 @@
+.flex-container {
+         display: flex;
+     }
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container-formularios{
+    width: 100%;
+}
+
+.formulario-aluno{
+
+}
+
+.formulario-professor{
+
+}
+
+.formulario-aluno, .formulario-professor{
+     border: 2px black solid;
+     border-radius: 10px;
+     /*margin: 0 10px;*/
+ }
+
+.titulo-formulario{
+    text-align: center;
+    font-size: x-large;
+}
+
+form{
+    /*border: 2px purple solid;*/
+    border-radius: 10px;
+    padding: 10px;
+    background: lightgray;
+}
+
