@@ -15,7 +15,35 @@
     <title>Hello, world!</title>
 </head>
 <body>
+<!-- Barra de navegação -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top justify-content-between">
+    <div class="container">
+        <div>
+        <a class="navbar-brand" href="#">Sistema de Controle de Atividades Complementares</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        </div>
 
+        <div>
+        <div class="collapse navbar-collapse"  id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <button class="btn btn-light mr-2" type="button">Coordenador</button>
+                </li>
+
+                <li class="nav-item">
+                    <button class="btn btn-dark my-0" type="button">Administrador</button>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</nav>
+<!-- /Barra de navegação -->
+
+
+<!-- Formulários -->
 <div class="container flex-container flex-center ">
     <div class="row justify-content-between container-formularios">
 
@@ -64,8 +92,8 @@
                         <small id="email-dica" class="form-text text-muted">Nós não vamos mostrar seu email para ninguém.</small>
                 </div>
                 <div class="form-group input-group-sm">
-                    <label for="input-nome-cadastro">Curso</label>
-                    <input type="text" class="form-control" id="input-nome-cadastro" placeholder="Ciência da Computação">
+                    <label for="input-curso-cadastro">Curso</label>
+                    <input type="text" class="form-control" id="input-curso-cadastro" value="Ciência da Computação">
                 </div>
                 <div class="form-group input-group-sm">
                     <label for="input-password-cadastro">Senha</label>
