@@ -25,19 +25,19 @@
         </button>
         </div>
 
-        <div>
-        <div class="collapse navbar-collapse"  id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <button class="btn btn-light mr-2" type="button">Coordenador</button>
-                </li>
-
-                <li class="nav-item">
-                    <button class="btn btn-dark my-0" type="button">Administrador</button>
-                </li>
-            </ul>
-        </div>
-        </div>
+<!--        <div>-->
+<!--        <div class="collapse navbar-collapse"  id="navbarSupportedContent">-->
+<!--            <ul class="navbar-nav mr-auto">-->
+<!--                <li class="nav-item">-->
+<!--                    <button class="btn btn-light mr-2" type="button">Coordenador</button>-->
+<!--                </li>-->
+<!---->
+<!--                <li class="nav-item">-->
+<!--                    <button class="btn btn-dark my-0" type="button">Administrador</button>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--        </div>-->
     </div>
 </nav>
 <!-- /Barra de navegação -->
@@ -47,15 +47,15 @@
 <div class="container flex-container flex-center ">
     <div class="row justify-content-between container-formularios">
 
-        <!-- Formulário de login de aluno -->
-        <div class="col-md-5 formulario-aluno" style="//border: solid 1px red;">
+        <!-- Formulário de login -->
+        <div class="col-md-5 formulario-login" >
             <div class="titulo-formulario">
-                Login do aluno
+                Login
             </div>
             <form>
                 <div class="form-group input-group-lg">
-                    <label for="input-email-login">Email</label>
-                    <input type="email" class="form-control" id="input-email-login" aria-describedby="emailHelp" placeholder="Digite seu email">
+                    <label for="input-login">Login</label>
+                    <input type="text" class="form-control" id="input-login" placeholder="Digite seu RA ou email">
                 </div>
                 <div class="form-group input-group-lg">
                     <label for="input-senha-login">Senha</label>
@@ -65,10 +65,10 @@
                 <button type="submit" class="btn btn-primary">Entrar</button>
             </form>
         </div>
-        <!-- /Formulário de login de aluno -->
+        <!-- /Formulário de login -->
 
         <!-- Formulário de cadastro de aluno -->
-        <div class="col-md-5 formulario-professor" style="//border: solid 1px green;">
+        <div class="col-md-5 formulario-cadastro" >
             <div class="titulo-formulario">
                 Cadastro do aluno
             </div>

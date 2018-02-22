@@ -12,18 +12,17 @@
     width: 100%;
 }
 
-.formulario-aluno{
+.formulario-login{
 
 }
 
-.formulario-professor{
+.formulario-cadastro{
 
 }
 
-.formulario-aluno, .formulario-professor{
+.formulario-login, .formulario-cadastro{
      border: 2px black solid;
      border-radius: 10px;
-     /*margin: 0 10px;*/
  }
 
 .titulo-formulario{
