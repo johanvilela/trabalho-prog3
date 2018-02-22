@@ -12,11 +12,14 @@
     <!-- Estilo css -->
     <link rel="stylesheet" href="_css/estilo.css">
 
+    <!-- Arquivos JavaScript -->
+    <script src="_js/index.js"></script>
+
     <title>Hello, world!</title>
 </head>
 <body>
 <!-- Barra de navegação -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top justify-content-between">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary justify-content-between">
     <div class="container">
         <div>
         <a class="navbar-brand" href="#">Sistema de Controle de Atividades Complementares</a>
@@ -44,7 +47,7 @@
 
 
 <!-- Formulários -->
-<div class="container flex-container flex-center ">
+<div class="container ">
     <div class="row justify-content-between container-formularios">
 
         <!-- Formulário de login -->
@@ -52,17 +55,17 @@
             <div class="titulo-formulario">
                 Login
             </div>
-            <form>
+            <form method="post" action="_database/login.php">
                 <div class="form-group input-group-lg">
                     <label for="input-login">Login</label>
-                    <input type="text" class="form-control" id="input-login" placeholder="Digite seu RA ou email">
+                    <input type="text" class="form-control" id="input-login" name="input-login" placeholder="Digite seu RA ou email">
                 </div>
                 <div class="form-group input-group-lg">
                     <label for="input-senha-login">Senha</label>
-                    <input type="password" class="form-control" id="input-senha-login" placeholder="Digite sua senha">
+                    <input type="password" class="form-control" id="input-senha-login" name="input-senha-login" placeholder="Digite sua senha">
                 </div>
 
-                <button type="submit" class="btn btn-primary">Entrar</button>
+                <button type="submit" class="btn btn-primary" onclick="//verificaTipoDeLogin()">Entrar</button>
             </form>
         </div>
         <!-- /Formulário de login -->
@@ -72,32 +75,32 @@
             <div class="titulo-formulario">
                 Cadastro do aluno
             </div>
-            <form>
+            <form method="post" action="_database/cadastro_aluno.php">
                 <div class="form-group input-group-sm">
                     <label for="input-ra-cadastro">RA</label>
-                    <input type="text" class="form-control" id="input-ra-cadastro" aria-describedby="ra-dica" placeholder="Digite seu RA">
+                    <input type="text" class="form-control" id="input-ra-cadastro" name="input-ra-cadastro" aria-describedby="ra-dica" placeholder="Digite seu RA">
                     <small id="ra-dica" class="form-text text-muted">Exemplo: 201411722015</small>
                 </div>
                 <div class="form-group input-group-sm">
                     <label for="input-nome-cadastro">Nome</label>
-                    <input type="text" class="form-control" id="input-nome-cadastro" placeholder="Digite seu nome completo">
+                    <input type="text" class="form-control" id="input-nome-cadastro" name="input-nome-cadastro" placeholder="Digite seu nome completo">
                 </div>
                 <div class="form-group input-group-sm">
                     <label for="input-cpf-cadastro">CPF</label>
-                    <input type="text" class="form-control" id="input-cpf-cadastro" placeholder="Digite seu CPF">
+                    <input type="text" class="form-control" id="input-cpf-cadastro" name="input-cpf-cadastro" placeholder="Digite seu CPF">
                 </div>
                 <div class="form-group input-group-sm">
                     <label for="input-email-cadastro">Email</label>
-                    <input type="email" class="form-control" id="input-email-cadastro" aria-describedby="email-dica" placeholder="Digite seu email">
+                    <input type="email" class="form-control" id="input-email-cadastro" name="input-email-cadastro" aria-describedby="email-dica" placeholder="Digite seu email">
                         <small id="email-dica" class="form-text text-muted">Nós não vamos mostrar seu email para ninguém.</small>
                 </div>
                 <div class="form-group input-group-sm">
                     <label for="input-curso-cadastro">Curso</label>
-                    <input type="text" class="form-control" id="input-curso-cadastro" value="Ciência da Computação">
+                    <input type="text" class="form-control" id="input-curso-cadastro" name="input-curso-cadastro" value="Ciência da Computação">
                 </div>
                 <div class="form-group input-group-sm">
                     <label for="input-password-cadastro">Senha</label>
-                    <input type="password" class="form-control" id="input-password-cadastro" placeholder="Digite sua senha">
+                    <input type="password" class="form-control" id="input-password-cadastro" name="input-password-cadastro" placeholder="Digite sua senha">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
