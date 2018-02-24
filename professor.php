@@ -50,8 +50,8 @@
 <div class="container ">
     <div class="row justify-content-center container-formularios">
 
-        <!-- Formulário de atividae -->
-        <div class="col-md-5 formulario-atividade" >
+        <!-- Formulário de professor -->
+        <div class="col-md-5 formulario-professor" >
             <div class="titulo-formulario">
                 Cadastro de professor
             </div>
@@ -61,7 +61,7 @@
                     <input type="text" class="form-control" id="input-nome-professor" name="input-nome-professor" aria-describedby="titulo-dica" placeholder="Digite o nome do professor">
                 </div>
                 <div class="form-group input-group-sm">
-                    <label for="input-email-professor">Carga horaria (horas)</label>
+                    <label for="input-email-professor">Email</label>
                     <input type="email" class="form-control" id="input-email-professor" name="input-email-professor" placeholder="Digite o email do professor">
                 </div>
                 
@@ -69,7 +69,7 @@
                 <small id="ra-dica" class="form-text text-muted">Cadastar professor</small>
             </form>
         </div>
-        <!-- Formulário de cadastro de atividade complementar -->
+        <!-- Formulário de cadastro de professor -->
 
     </div>
 

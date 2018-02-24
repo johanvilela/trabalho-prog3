@@ -11,14 +11,14 @@
 
     $link = $objDb->conecta_mysql();
 
-    $sql = "INSERT INTO atividade(id, nome, email) VALUES (NULL,'$nome','$email')";
+    $sql = "INSERT INTO professor(id, nome, email) VALUES (NULL,'$nome','$email')";
 
 
 
     //executar a query
     if (mysqli_query($link, $sql)) {
-        echo "Atividade registrado com sucesso!";
+        echo "Professor registrado com sucesso!";
     } else {
-        echo "Erro ao registrar atividade!";
+        echo "Erro ao registrar professor!";
     }
 ?>
