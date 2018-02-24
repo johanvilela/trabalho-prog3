@@ -3,7 +3,7 @@
 class db {
 
 
-    Dados de Conexão
+    // Dados de Conexão
     private $host = "localhost";
     private $usuario = "root";
     private $senha = "root";

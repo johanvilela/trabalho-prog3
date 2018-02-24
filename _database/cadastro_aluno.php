@@ -15,7 +15,7 @@
 
     $link = $objDb->conecta_mysql();
 
-    $sql = "insert into aluno(RA, nome, cpf, email, curso, senha) VALUES ('$ra','$nome','$cpf','$email','$curso','$senha')";
+    $sql = "INSERT INTO aluno(RA, nome, cpf, email, curso, senha) VALUES ('$ra','$nome','$cpf','$email','$curso','$senha')";
 
 
 

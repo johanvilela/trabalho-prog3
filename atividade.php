@@ -76,11 +76,18 @@
                     <input type="text" class="form-control" id="input-tipo-atividade" name="input-tipo-atividade" aria-describedby="tipo-dica" placeholder="Selecione o tipo de atividade complementar">
                     <small id="tipo-dica" class="form-text text-muted">Exemplo: Curso de extensão</small>
                 </div>
+                <div class="form-group input-group-sm">
+                    <label for="input-ra-atividade">RA</label>
+                    <input type="text" class="form-control" id="input-ra-atividade" name="input-ra-atividade" aria-describedby="ra-dica" placeholder="Digite seu RA">
+                    <small id="ra-dica" class="form-text text-muted">Exemplo: 201411722015</small>
+                </div>
+                <!-- <input type="hidden" class="form-control" id="input-ra-atividade" name="input-ra-atividade" value="0">  -->
 
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
+                <small id="ra-dica" class="form-text text-muted">Cadastar atividade complementar</small>
             </form>
         </div>
-        <!-- /Formulário de cadastro de atividade complementar -->
+        <!-- Formulário de cadastro de atividade complementar -->
 
     </div>
 

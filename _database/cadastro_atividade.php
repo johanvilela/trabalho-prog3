@@ -14,7 +14,7 @@
 
     $link = $objDb->conecta_mysql();
 
-    $sql = "INSERT INTO atividade(titulo, carga_hr, ano, tipo, RA) VALUES ('$titulo','$carga_hr','$ano','$tipo','$RA')";
+    $sql = "INSERT INTO atividade(id, titulo, carga_hr, ano, tipo, RA) VALUES (NULL,'$titulo','$carga_hr','$ano','$tipo','$RA')";
 
 
 
