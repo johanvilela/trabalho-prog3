@@ -2,6 +2,7 @@
 
 class db {
 
+    private $conexao;
 
     // Dados de Conexão
     private $host = "localhost";
@@ -17,7 +18,7 @@ class db {
 
     // Função para conexão
     public function conecta_mysql(){
-
+        global $conexao;
         // criar conexão
         $conexao =  mysqli_connect($this->host, $this->usuario, $this->senha, $this->database);
 
@@ -33,6 +34,11 @@ class db {
         }
 
         return $conexao;
+    }
+
+    public function desconecta_mysql(){
+        global $conexao;
+        mysql_close($conexao);
     }
 
 }

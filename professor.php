@@ -48,7 +48,7 @@
 
 <!-- Formulários -->
 <div class="container ">
-    <div class="row justify-content-center container-formularios">
+    <div class="row justify-content-between container-formularios">
 
         <!-- Formulário de professor -->
         <div class="col-md-5 formulario-professor" >
@@ -65,11 +65,50 @@
                     <input type="email" class="form-control" id="input-email-professor" name="input-email-professor" placeholder="Digite o email do professor">
                 </div>
                 
-                <button type="submit" class="btn btn-primary">Cadastrar</button>
-                <small id="ra-dica" class="form-text text-muted">Cadastar professor</small>
+                <div>
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                    <small id="ra-dica" class="form-text text-muted">Cadastar professor</small>
+
+                    <input class="btn btn-danger" type="reset" value="Limpar dados">
+                    <small id="ra-dica" class="form-text text-muted">Limpar campos do formulario</small>
+                </div>
             </form>
         </div>
         <!-- Formulário de cadastro de professor -->
+
+        <!-- Formulário de tipo de atividade -->
+        <div class="col-md-5 formulario-tipo_de_atividade" >
+            <div class="titulo-formulario">
+                Cadastro de tipo de atividade complentar
+            </div>
+            <form method="post" action="_database/cadastro_tipo_de_atividade.php">
+                <div class="form-group input-group-sm">
+                    <label for="input-tipo-tipo_de_atividade">Tipo</label>
+                    <input type="text" class="form-control" id="input-tipo-tipo_de_atividade" name="input-tipo-tipo_de_atividade" aria-describedby="titulo-dica" placeholder="Digite o tipo de atividade">
+                    <small id="titulo-dica" class="form-text text-muted">Exemplo: Curso de PHP</small>
+                </div>
+                <div class="form-group input-group-sm">
+                    <label for="input-carga_hr_max-tipo_de_atividade">Carga horaria maxima</label>
+                    <input type="number" class="form-control" id="input-carga_hr_max-tipo_de_atividade" name="input-carga_hr_max-tipo_de_atividade" placeholder="Digite a carga horaria maxima">
+                    <small id="titulo-dica" class="form-text text-muted">Exemplo: 30</small>
+                </div>
+                <div class="form-group input-group-sm">
+                    <label for="input-carga_hr_min-tipo_de_atividade">Carga horaria minima</label>
+                    <input type="number" class="form-control" id="input-carga_hr_min-tipo_de_atividade" name="input-carga_hr_min-tipo_de_atividade" placeholder="Digite a carga horaria minima">
+                    <small id="titulo-dica" class="form-text text-muted">Exemplo: 10</small>
+                </div>
+                
+                <div>
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                    <small id="ra-dica" class="form-text text-muted">Cadastar tipo de ativadade complementar</small>
+
+                    <input class="btn btn-danger" type="reset" value="Limpar dados">
+                    <small id="ra-dica" class="form-text text-muted">Limpar campos do formulario</small>
+                </div>
+
+            </form>
+        </div>
+        <!-- Formulário de cadastro de tipo de atividade -->
 
     </div>
 

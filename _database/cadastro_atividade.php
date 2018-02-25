@@ -24,4 +24,6 @@
     } else {
         echo "Erro ao registrar atividade!";
     }
+
+    $objDb->desconecta_mysql();
 ?>

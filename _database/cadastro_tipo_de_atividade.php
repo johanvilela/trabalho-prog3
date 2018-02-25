@@ -22,4 +22,6 @@
     } else {
         echo "Erro ao registrar tipo de atividade!";
     }
+
+    $objDb->desconecta_mysql();
 ?>

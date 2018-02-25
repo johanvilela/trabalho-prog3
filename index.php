@@ -65,7 +65,7 @@
                     <input type="password" class="form-control" id="input-senha-login" name="input-senha-login" placeholder="Digite sua senha">
                 </div>
 
-                <button type="submit" class="btn btn-primary" onclick="//verificaTipoDeLogin()">Entrar</button>
+                <button type="submit" class="btn btn-primary">Entrar</button>
             </form>
         </div>
         <!-- /Formulário de login -->

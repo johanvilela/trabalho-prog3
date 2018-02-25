@@ -21,4 +21,7 @@
     } else {
         echo "Erro ao registrar professor!";
     }
+
+    // Fecha conexao com banco de dados 
+    $objDb->desconecta_mysql();
 ?>

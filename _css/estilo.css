@@ -20,7 +20,8 @@
 
 }
 
-.formulario-login, .formulario-cadastro, .formulario-professor, .formulario-atividade{
+.formulario-login, .formulario-cadastro, .formulario-professor, 
+.formulario-atividade, .formulario-tipo_de_atividade{
      border: 2px black solid;
      border-radius: 10px;
  }

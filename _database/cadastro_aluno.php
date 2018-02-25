@@ -25,4 +25,6 @@
     } else {
         echo "Erro ao registrar usuário!";
     }
+
+    $objDb->desconecta_mysql();
 ?>
