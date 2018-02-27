@@ -1,8 +1,6 @@
 <?php
 
-
     require_once('db.class.php');
-
 
     $ra = $_POST["input-ra-cadastro"];
     $nome = $_POST["input-nome-cadastro"];
@@ -11,9 +9,13 @@
     $curso = $_POST["input-curso-cadastro"];
     $senha = $_POST["input-password-cadastro"];
 
+
     $objDb = new db();
 
     $link = $objDb->conecta_mysql();
+
+    echo "ai pai para!";
+    echo '<br>';
 
     $sql = "insert into aluno(RA, nome, cpf, email, curso, senha) VALUES ('$ra','$nome','$cpf','$email','$curso','$senha')";
 

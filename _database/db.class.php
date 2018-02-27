@@ -3,16 +3,18 @@
 class db {
 
 
-    // Dados de Conexão
-//    private $host = "10.0.24.28";
-//    private $usuario = "root";
-//    private $senha = "root";
-//    private $database = "prog3";
+    // Dados de Conexão (meu MySQL local)
+    private $host = "localhost";
+    private $usuario = "root";
+    private $senha = "root";
+    private $database = "prog3";
 
-    private $host = "https://databases.000webhost.com";
-    private $usuario = "id4831163_root1234";
-    private $senha = "root1234";
-    private $database = "id4831163_prog3";
+
+    // Dados do banco no servidor ( NÃO ESTÁ FUNCIONANDO )
+//    private $host = "https://databases.000webhost.com";
+//    private $usuario = "id4831163_root1234";
+//    private $senha = "root1234";
+//    private $database = "id4831163_prog3";
 
 
     // Função para conexão
