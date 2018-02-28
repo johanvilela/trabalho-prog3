@@ -15,7 +15,7 @@
     <!-- Arquivos JavaScript -->
     <script src="_js/index.js"></script>
 
-    <title>Hello, world!</title>
+    <title>Atividade</title>
 </head>
 <body>
 <!-- Barra de navegação -->
@@ -48,65 +48,46 @@
 
 <!-- Formulários -->
 <div class="container ">
-    <div class="row justify-content-between container-formularios">
+    <div class="row justify-content-center container-formularios">
 
-        <!-- Formulário de login -->
-        <div class="col-md-5 formulario-login" >
+        <!-- Formulário de atividae -->
+        <div class="col-md-5 formulario-atividade" >
             <div class="titulo-formulario">
-                Login
+                Cadastro de atividade complementar
             </div>
-            <form method="post" action="_database/login.php">
-                <div class="form-group input-group-lg">
-                    <label for="input-login">Login</label>
-                    <input type="text" class="form-control" id="input-login" name="input-login" placeholder="Digite seu RA ou email">
-                </div>
-                <div class="form-group input-group-lg">
-                    <label for="input-senha-login">Senha</label>
-                    <input type="password" class="form-control" id="input-senha-login" name="input-senha-login" placeholder="Digite sua senha">
-                </div>
-
-                <button type="submit" class="btn btn-primary">Entrar</button>
-            </form>
-        </div>
-        <!-- /Formulário de login -->
-
-        <!-- Formulário de cadastro de aluno -->
-        <div class="col-md-5 formulario-cadastro" >
-            <div class="titulo-formulario">
-                Cadastro do aluno
-            </div>
-            <form method="post" action="_database/cadastro_aluno.php">
+            <form method="post" action="_database/cadastro_atividade.php">
                 <div class="form-group input-group-sm">
-                    <label for="input-ra-cadastro">RA</label>
-                    <input type="text" class="form-control" id="input-ra-cadastro" name="input-ra-cadastro" aria-describedby="ra-dica" placeholder="Digite seu RA">
+                    <label for="input-titulo-atividade">Titulo</label>
+                    <input type="text" class="form-control" id="input-titulo-atividade" name="input-titulo-atividade" aria-describedby="titulo-dica" placeholder="Digite o titulo da atividade complementar">
+                    <small id="titulo-dica" class="form-text text-muted">Exemplo: Curso de PHP</small>
+                </div>
+                <div class="form-group input-group-sm">
+                    <label for="input-carga_hr-atividade">Carga horaria (horas)</label>
+                    <input type="number" class="form-control" id="input-carga_hr-atividade" name="input-carga_hr-atividade" placeholder="Digite a carga horaria da atividade complementar">
+                    <small id="carga_hr-dica" class="form-text text-muted">Exemplo: 30</small>
+                </div>
+                <div class="form-group input-group-sm">
+                    <label for="input-ano-atividade">Ano</label>
+                    <input type="number" class="form-control" id="input-ano-atividade" name="input-ano-atividade" placeholder="Digite o ano de participação da atividade">
+                    <small id="ano-dica" class="form-text text-muted">Exemplo: 2018</small>
+                </div>
+                <div class="form-group input-group-sm">
+                    <label for="input-tipo-atividade">Tipo</label>
+                    <input type="text" class="form-control" id="input-tipo-atividade" name="input-tipo-atividade" aria-describedby="tipo-dica" placeholder="Selecione o tipo de atividade complementar">
+                    <small id="tipo-dica" class="form-text text-muted">Exemplo: Curso de extensão</small>
+                </div>
+                <div class="form-group input-group-sm">
+                    <label for="input-ra-atividade">RA</label>
+                    <input type="text" class="form-control" id="input-ra-atividade" name="input-ra-atividade" aria-describedby="ra-dica" placeholder="Digite seu RA">
                     <small id="ra-dica" class="form-text text-muted">Exemplo: 201411722015</small>
                 </div>
-                <div class="form-group input-group-sm">
-                    <label for="input-nome-cadastro">Nome</label>
-                    <input type="text" class="form-control" id="input-nome-cadastro" name="input-nome-cadastro" placeholder="Digite seu nome completo">
-                </div>
-                <div class="form-group input-group-sm">
-                    <label for="input-cpf-cadastro">CPF</label>
-                    <input type="text" class="form-control" id="input-cpf-cadastro" name="input-cpf-cadastro" placeholder="Digite seu CPF">
-                </div>
-                <div class="form-group input-group-sm">
-                    <label for="input-email-cadastro">Email</label>
-                    <input type="email" class="form-control" id="input-email-cadastro" name="input-email-cadastro" aria-describedby="email-dica" placeholder="Digite seu email">
-                        <small id="email-dica" class="form-text text-muted">Nós não vamos mostrar seu email para ninguém.</small>
-                </div>
-                <div class="form-group input-group-sm">
-                    <label for="input-curso-cadastro">Curso</label>
-                    <input type="text" class="form-control" id="input-curso-cadastro" name="input-curso-cadastro" value="Ciência da Computação">
-                </div>
-                <div class="form-group input-group-sm">
-                    <label for="input-password-cadastro">Senha</label>
-                    <input type="password" class="form-control" id="input-password-cadastro" name="input-password-cadastro" placeholder="Digite sua senha">
-                </div>
+                <!-- <input type="hidden" class="form-control" id="input-ra-atividade" name="input-ra-atividade" value="0">  -->
 
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
+                <small id="ra-dica" class="form-text text-muted">Cadastar atividade complementar</small>
             </form>
         </div>
-        <!-- /Formulário de cadastro de aluno -->
+        <!-- Formulário de cadastro de atividade complementar -->
 
     </div>
 

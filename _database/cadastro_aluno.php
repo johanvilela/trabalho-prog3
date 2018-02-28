@@ -14,10 +14,14 @@
 
     $link = $objDb->conecta_mysql();
 
+<<<<<<< HEAD
+    $sql = "INSERT INTO aluno(RA, nome, cpf, email, curso, senha) VALUES ('$ra','$nome','$cpf','$email','$curso','$senha')";
+=======
     echo "ai pai para!";
     echo '<br>';
 
     $sql = "insert into aluno(RA, nome, cpf, email, curso, senha) VALUES ('$ra','$nome','$cpf','$email','$curso','$senha')";
+>>>>>>> master
 
 
 
@@ -27,4 +31,6 @@
     } else {
         echo "Erro ao registrar usuário!";
     }
+
+    $objDb->desconecta_mysql();
 ?>

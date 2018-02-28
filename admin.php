@@ -24,21 +24,25 @@
             <div class="titulo-formulario">
                 Dados do Coordenador
             </div>
-            <form>
-                <div class="form-group">
+            <form method="post" action="_database/cadastro_coordenador.php">
+                <!-- <div class="form-group">
                     <label for="input-coord-nome">Nome</label>
-                    <input type="text" class="form-control" id="input-coord-nome" placeholder="Digite o nome do coordenador">
-                </div>
+                    <input type="text" class="form-control" name="input-coord-nome"  id="input-coord-nome" placeholder="Digite o nome do coordenador">
+                </div> -->
                 <div class="form-group">
                     <label for="input-coord-email">email</label>
-                    <input type="email" class="form-control" id="input-coord-email" placeholder="Digite o email do coordenador">
+                    <input type="email" class="form-control" name="input-coord-email" id="input-coord-email" placeholder="Digite o email do coordenador">
                 </div>
+
                 <div class="form-group">
                     <label for="input-coord-senha">Senha</label>
-                    <input type="password" class="form-control" id="input-coord-senha" placeholder="Digite a senha do coordenador">
+                    <input type="password" class="form-control" name="input-coord-senha" id="input-coord-senha" placeholder="Digite a senha do coordenador">
                 </div>
-                <input class="btn btn-danger" type="reset" value="Limpar dados">
-                <button type="submit" class="btn btn-primary">Salvar</button>
+                <div>
+                    <input class="btn btn-danger" type="reset" value="Limpar dados">
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    
+                </div>
             </form>
 
         </div>
