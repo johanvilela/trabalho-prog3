@@ -1,7 +1,10 @@
 <?php
+
+	// Acesso as variaveis de secao
+	session_start();
+
 	// Se o isset() retornar TRUE, ou seja, se $_GET possuir o indece "erro", erro = o valor contido nesse indice, caso contrario, erro = 0
 	$erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
-
 ?>
 
 <!doctype html>
@@ -21,14 +24,29 @@
 	<!-- Arquivos JavaScript -->
 	<script >
 		$(document).ready( function() {
-			alert(" Botao foi clicado");
-			$('#btn-login').click(function(){
-				alert(" Botao foi clicado");
 
-				if ($('input-senha-login').val() == '') {
-					alert("Campo Usuario esta vazio");
+			$('#btn-login').click(function(){
+				var campo_vazio = false;
+
+				if ($('#input-login').val() == '') {
+					// Muda a cor da borda caso o campo login esteja vazio
+					$('#input-login').css({ 'border-color': '#A94442' });
+					campo_vazio = true;
+				} else {
+					$('#input-login').css({ 'border-color': '#CCC' });
 				}
 
+				if ($('#input-senha-login').val() == '') {
+					// Muda a cor da borda caso o campo senha esteja vazio
+					$('#input-senha-login').css({ 'border-color': '#A94442' });
+					campo_vazio = true;
+				} else {
+					$('#input-login').css({ 'border-color': '#CCC' });
+				}
+
+				if (campo_vazio) {
+					return false;
+				}
 			});
 		});
 	</script>
@@ -90,6 +108,7 @@
 			</div>
 			<!-- /Formulário de login -->
 
+			<!-- Exibe erro caso o login ou senha estejam incorretos -->
 			<?php
 				if ($erro == 1) {
 					echo '<font color="#FF0000">Login ou senha incorretos</font>';
