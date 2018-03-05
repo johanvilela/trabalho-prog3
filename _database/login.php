@@ -1,10 +1,12 @@
 <?php
 
+	// $_SESSION sao variveis globais tratadas como vetor.
+
 	include_once("db.class.php");
 
 	// Recebe as informacoes do formulario
 	$login = $_POST["input-login"];
-	$senha = $_POST["input-senha-login"];
+	$senha = md5($_POST["input-senha-login"]);
 
 	$objDb = new db();
 
@@ -21,68 +23,55 @@
 
 	$sql_senha = "";
 
-	// *****************************************************************************************
-	// ****** quando envia o formulario em branco, entra como aluno e coordenador logado ******
-	// *****************************************************************************************
+	if ($login_admin || $login_aluno || $login_coord) {
 
-	// Verifica se quem está logando é um coordenador
-	if ($login_coord) {
-		$dados_usuario = mysqli_fetch_array($login_coord);
-		echo "<br	/>";
+		$dados_coord = mysqli_fetch_array($login_coord);
+		$dados_admin = mysqli_fetch_array($login_admin);
+		$dados_aluno = mysqli_fetch_array($login_aluno);
 
-		if( isset($dados_usuario['email']) ){
-			$flag_coord = TRUE;
+		// ============== COORDENADOR ==============
+		if( isset($dados_coord['email']) ){
+			if ( isset( $dados_coord['senha'] ) ){
+				// Varivel de secao
+				$_SESSION['email'] = $dados_coord['email'];
+				$_SESSION['senha'] = $dados_coord['senha'];
 
-			if ( isset( $dados_usuario['senha'] )){
-				echo "<br />";
-				echo "Coordenador Logado";
+				header("location: ../coordenador.php");
 			}
 		} else {
 			header("location: ../index.php?erro=1");
 		}
 
-	} if ($login_aluno) { // Verifica se quem está logando é um aluno
-		echo "<br />";
-		$dados_usuario = mysqli_fetch_array($login_aluno);
+		// ============== ALUNO ==============
+		if( isset($dados_aluno['RA']) ){
 
-		if( isset($dados_usuario['RA']) ){
-			$flag_aluno = TRUE;
+			if ( isset( $dados_aluno['senha']) ) {
+				// Varivel de secao
+				$_SESSION['RA'] = $dados_aluno['RA'];
+				$_SESSION['senha'] = $dados_aluno['senha'];
 
-			if ( isset( $dados_usuario['senha']) ) {
-				echo "<br />";
-				echo "Aluno Logado";
+				header("location: ../atividade.php");
 			} else {
 				header("location: ../index.php?erro=1");
 			}
 		}
 
-	} if ($login_admin) { // Verifica se quem está logando é um admin
-		echo "<br />";
-		$dados_usuario = mysqli_fetch_array($login_admin);
+		// ============== ADMIN ==============
+		if ( isset($dados_admin["login"]) ) {
 
-		if ( isset($dados_usuario["login"]) ) {
-			$flag_admin = TRUE;
+			if (isset( $dados_admin['senha'])){
+				// Varivel de secao
+				$_SESSION['login'] = $dados_admin['login'];
+				$_SESSION['senha'] = $dados_admin['senha'];
 
-			if ($flag_admin) {
-				echo "<br />";
-				echo "Admin Logado";
+				header("location: ../admin.php");
 			} else {
 				header("location: ../index.php?erro=1");
 			}
 		}
-
-	} // ********** Corrigir caso entre um usuario nao cadastrado **********
-	 else { // Usuario nao existe no BD
+	} else {
 		echo "Usuario nao cadastrado";
 	}
-
-	// if($flag_coord){
-	// 	// Inicia section do coordenador
-	// }if($flag_aluno){
-	// 	// Inicia section do ...
-	// }if($flag_admin){
-	// 	// Inicia section do ...
-	// }
 
 	$objDb->desconecta_mysql();
 ?>
