@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Tempo de geração: 27/02/2018 às 21:53
+-- Tempo de geração: 27/02/2018 às 23:25
 -- Versão do servidor: 5.5.59-0+deb8u1
 -- Versão do PHP: 5.6.33-0+deb8u1
 
@@ -95,21 +95,18 @@ CREATE TABLE IF NOT EXISTS `coordenador` (
 `id` int(3) NOT NULL,
   `email` varchar(30) DEFAULT NULL,
   `senha` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Fazendo dump de dados para tabela `coordenador`
 --
 
 INSERT INTO `coordenador` (`id`, `email`, `senha`) VALUES
-(1, '', ''),
-(2, '', ''),
-(3, '', ''),
 (4, 'fulano4@coord.com', '123'),
 (5, 'fulano5@coord.com', '123'),
-(6, '', ''),
 (7, '123@123.com', '123'),
-(8, '321@321', '321');
+(8, '321@321', '321'),
+(9, 'coor@coor.edu', '');
 
 -- --------------------------------------------------------
 
@@ -138,17 +135,29 @@ INSERT INTO `professor` (`id`, `nome`, `email`) VALUES
 
 CREATE TABLE IF NOT EXISTS `tipo_atividade` (
 `id` int(3) NOT NULL,
-  `tipo` varchar(65) DEFAULT NULL,
-  `carga_hr_max` int(3) DEFAULT NULL,
-  `carga_hr_min` int(3) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  `tipo` tinytext,
+  `carga_hr_max` int(3) DEFAULT '0',
+  `carga_hr_min` int(3) DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 --
 -- Fazendo dump de dados para tabela `tipo_atividade`
 --
 
 INSERT INTO `tipo_atividade` (`id`, `tipo`, `carga_hr_max`, `carga_hr_min`) VALUES
-(1, 'php', 40, 11);
+(2, 'Iniciação Científica ', 30, 0),
+(3, 'Extensão ', 20, 0),
+(5, 'Representação (Colegiado de Curso, \r\nCâmara de Extensão, Congregação e \r\nsimilares)', 20, 0),
+(6, 'Atuação no Laboratório de Ensino de \r\nComputação ', 10, 0),
+(7, 'Congressos, simpósios, semana de \r\nestudos, cursos extra‐curriculares, e \r\nsimilares ', 30, 0),
+(8, 'Conferências, aulas‐inaugurais, \r\npalestras, mesas‐redondas isoladas', 2, 0),
+(9, 'Apresentação de trabalho em evento ', 10, 0),
+(10, 'Publicações tecnológicas ou \r\ncientíficas (Com orientação) – \r\nResumo ', 10, 0),
+(11, 'Publicações tecnológicas ou \r\ncientíficas (Com orientação) – \r\nTrabalho Completo ', 20, 0),
+(12, 'Publicações tecnológicas ou \r\ncientíficas (Independente) – Resumo ', 20, 0),
+(13, 'Publicações tecnológicas ou \r\ncientíficas (Independente) – Trabalho \r\nCompleto ', 30, 0),
+(14, 'Publicação literária, filosófica ou \r\nartística ', 10, 0),
+(1, 'Monitoria', 30, 0);
 
 --
 -- Índices de tabelas apagadas
@@ -203,7 +212,7 @@ MODIFY `id` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT de tabela `coordenador`
 --
 ALTER TABLE `coordenador`
-MODIFY `id` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+MODIFY `id` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT de tabela `professor`
 --
@@ -213,7 +222,7 @@ MODIFY `id` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT de tabela `tipo_atividade`
 --
 ALTER TABLE `tipo_atividade`
-MODIFY `id` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- Restrições para dumps de tabelas
 --
