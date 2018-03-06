@@ -6,7 +6,7 @@
 
 	$link = $objDb->conecta_mysql();
 
-	$sql = "SELECT nome FROM aluno, atividade WHERE aluno.ra = atividade.ra";
+	$sql = "SELECT nome FROM aluno, atividade WHERE aluno.RA = atividade.RA";
 
     $retorno = mysqli_query($link, $sql);
 
