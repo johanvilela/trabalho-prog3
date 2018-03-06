@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.12deb2+deb8u2
--- http://www.phpmyadmin.net
+-- version 4.6.6deb4
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Tempo de geração: 27/02/2018 às 23:25
--- Versão do servidor: 5.5.59-0+deb8u1
--- Versão do PHP: 5.6.33-0+deb8u1
+-- Host: localhost:3306
+-- Generation Time: 06-Mar-2018 às 10:35
+-- Versão do servidor: 10.1.26-MariaDB-0+deb9u1
+-- PHP Version: 7.0.27-0+deb9u1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,37 +14,38 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `prog3`
+-- Database: `prog3`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `admin`
+-- Estrutura da tabela `admin`
 --
 
-CREATE TABLE IF NOT EXISTS `admin` (
+CREATE TABLE `admin` (
   `login` varchar(30) DEFAULT NULL,
   `senha` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `admin`
+-- Extraindo dados da tabela `admin`
 --
 
 INSERT INTO `admin` (`login`, `senha`) VALUES
-('admin', 'admin');
+('admin', 'admin'),
+('', 'd41d8cd98f00b204e9800998ecf842');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `aluno`
+-- Estrutura da tabela `aluno`
 --
 
-CREATE TABLE IF NOT EXISTS `aluno` (
+CREATE TABLE `aluno` (
   `RA` int(12) NOT NULL,
   `nome` varchar(50) DEFAULT NULL,
   `cpf` int(11) DEFAULT NULL,
@@ -54,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `aluno` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `aluno`
+-- Extraindo dados da tabela `aluno`
 --
 
 INSERT INTO `aluno` (`RA`, `nome`, `cpf`, `email`, `curso`, `senha`) VALUES
@@ -65,63 +66,58 @@ INSERT INTO `aluno` (`RA`, `nome`, `cpf`, `email`, `curso`, `senha`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `atividade`
+-- Estrutura da tabela `atividade`
 --
 
-CREATE TABLE IF NOT EXISTS `atividade` (
-`id` int(3) NOT NULL,
+CREATE TABLE `atividade` (
+  `id` int(3) NOT NULL,
   `titulo` varchar(65) DEFAULT NULL,
   `carga_hr` int(3) DEFAULT NULL,
   `ano` int(4) DEFAULT NULL,
-  `tipo` varchar(65) DEFAULT NULL,
+  `tipo` int(3) NOT NULL,
   `RA` int(12) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
---
--- Fazendo dump de dados para tabela `atividade`
---
-
-INSERT INTO `atividade` (`id`, `titulo`, `carga_hr`, `ano`, `tipo`, `RA`) VALUES
-(1, 't', 20, 2019, 'ttt', 123),
-(2, 'atividade teste', 30, 2018, 'tipo teste', 0);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `coordenador`
+-- Estrutura da tabela `coordenador`
 --
 
-CREATE TABLE IF NOT EXISTS `coordenador` (
-`id` int(3) NOT NULL,
+CREATE TABLE `coordenador` (
+  `id` int(3) NOT NULL,
   `email` varchar(30) DEFAULT NULL,
   `senha` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `coordenador`
+-- Extraindo dados da tabela `coordenador`
 --
 
 INSERT INTO `coordenador` (`id`, `email`, `senha`) VALUES
+(1, '', ''),
+(2, '', ''),
+(3, '', ''),
 (4, 'fulano4@coord.com', '123'),
 (5, 'fulano5@coord.com', '123'),
+(6, '', ''),
 (7, '123@123.com', '123'),
-(8, '321@321', '321'),
-(9, 'coor@coor.edu', '');
+(8, '321@321', '321');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `professor`
+-- Estrutura da tabela `professor`
 --
 
-CREATE TABLE IF NOT EXISTS `professor` (
-`id` int(3) NOT NULL,
+CREATE TABLE `professor` (
+  `id` int(3) NOT NULL,
   `nome` varchar(40) DEFAULT NULL,
   `email` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `professor`
+-- Extraindo dados da tabela `professor`
 --
 
 INSERT INTO `professor` (`id`, `nome`, `email`) VALUES
@@ -130,108 +126,112 @@ INSERT INTO `professor` (`id`, `nome`, `email`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tipo_atividade`
+-- Estrutura da tabela `tipo_atividade`
 --
 
-CREATE TABLE IF NOT EXISTS `tipo_atividade` (
-`id` int(3) NOT NULL,
-  `tipo` tinytext,
-  `carga_hr_max` int(3) DEFAULT '0',
-  `carga_hr_min` int(3) DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+CREATE TABLE `tipo_atividade` (
+  `id` int(3) NOT NULL,
+  `tipo` varchar(65) DEFAULT NULL,
+  `carga_hr_max` int(3) DEFAULT NULL,
+  `carga_hr_min` int(3) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `tipo_atividade`
+-- Extraindo dados da tabela `tipo_atividade`
 --
 
 INSERT INTO `tipo_atividade` (`id`, `tipo`, `carga_hr_max`, `carga_hr_min`) VALUES
+(1, 'Monitoria', 30, 0),
 (2, 'Iniciação Científica ', 30, 0),
 (3, 'Extensão ', 20, 0),
-(5, 'Representação (Colegiado de Curso, \r\nCâmara de Extensão, Congregação e \r\nsimilares)', 20, 0),
+(5, 'Representação (Colegiado de Curso, \r\nCâmara de Extensão, Congrega', 20, 0),
 (6, 'Atuação no Laboratório de Ensino de \r\nComputação ', 10, 0),
-(7, 'Congressos, simpósios, semana de \r\nestudos, cursos extra‐curriculares, e \r\nsimilares ', 30, 0),
-(8, 'Conferências, aulas‐inaugurais, \r\npalestras, mesas‐redondas isoladas', 2, 0),
+(7, 'Congressos, simpósios, semana de \r\nestudos, cursos extra‐curricul', 30, 0),
+(8, 'Conferências, aulas‐inaugurais, \r\npalestras, mesas‐redondas isola', 2, 0),
 (9, 'Apresentação de trabalho em evento ', 10, 0),
-(10, 'Publicações tecnológicas ou \r\ncientíficas (Com orientação) – \r\nResumo ', 10, 0),
-(11, 'Publicações tecnológicas ou \r\ncientíficas (Com orientação) – \r\nTrabalho Completo ', 20, 0),
-(12, 'Publicações tecnológicas ou \r\ncientíficas (Independente) – Resumo ', 20, 0),
-(13, 'Publicações tecnológicas ou \r\ncientíficas (Independente) – Trabalho \r\nCompleto ', 30, 0),
-(14, 'Publicação literária, filosófica ou \r\nartística ', 10, 0),
-(1, 'Monitoria', 30, 0);
+(10, 'Publicações tecnológicas ou \r\ncientíficas (Com orientação) – \r\nRe', 10, 0),
+(11, 'Publicações tecnológicas ou \r\ncientíficas (Com orientação) – \r\nTr', 20, 0),
+(12, 'Publicações tecnológicas ou \r\ncientíficas (Independente) – Resumo', 20, 0),
+(13, 'Publicações tecnológicas ou \r\ncientíficas (Independente) – Trabal', 30, 0),
+(14, 'Publicação literária, filosófica ou \r\nartística ', 10, 0);
 
 --
--- Índices de tabelas apagadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices de tabela `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
- ADD UNIQUE KEY `login` (`login`);
+  ADD UNIQUE KEY `login` (`login`);
 
 --
--- Índices de tabela `aluno`
+-- Indexes for table `aluno`
 --
 ALTER TABLE `aluno`
- ADD PRIMARY KEY (`RA`), ADD UNIQUE KEY `RA` (`RA`);
+  ADD PRIMARY KEY (`RA`),
+  ADD UNIQUE KEY `RA` (`RA`);
 
 --
--- Índices de tabela `atividade`
+-- Indexes for table `atividade`
 --
 ALTER TABLE `atividade`
- ADD PRIMARY KEY (`id`), ADD KEY `RA_idx` (`RA`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `RA_idx` (`RA`),
+  ADD KEY `tipo` (`tipo`);
 
 --
--- Índices de tabela `coordenador`
+-- Indexes for table `coordenador`
 --
 ALTER TABLE `coordenador`
- ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `professor`
+-- Indexes for table `professor`
 --
 ALTER TABLE `professor`
- ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `tipo_atividade`
+-- Indexes for table `tipo_atividade`
 --
 ALTER TABLE `tipo_atividade`
- ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de tabelas apagadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `atividade`
+-- AUTO_INCREMENT for table `atividade`
 --
 ALTER TABLE `atividade`
-MODIFY `id` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT de tabela `coordenador`
+-- AUTO_INCREMENT for table `coordenador`
 --
 ALTER TABLE `coordenador`
-MODIFY `id` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
--- AUTO_INCREMENT de tabela `professor`
+-- AUTO_INCREMENT for table `professor`
 --
 ALTER TABLE `professor`
-MODIFY `id` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT de tabela `tipo_atividade`
+-- AUTO_INCREMENT for table `tipo_atividade`
 --
 ALTER TABLE `tipo_atividade`
-MODIFY `id` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
--- Restrições para dumps de tabelas
+-- Constraints for dumped tables
 --
 
 --
--- Restrições para tabelas `atividade`
+-- Limitadores para a tabela `atividade`
 --
 ALTER TABLE `atividade`
-ADD CONSTRAINT `RA` FOREIGN KEY (`RA`) REFERENCES `aluno` (`RA`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `RA` FOREIGN KEY (`RA`) REFERENCES `aluno` (`RA`),
+  ADD CONSTRAINT `tipo` FOREIGN KEY (`tipo`) REFERENCES `tipo_atividade` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
